@@ -118,11 +118,11 @@ if __name__ == '__main__':
     parser.add_argument('--sr', type=int, default=16000,
                         help='rate to downsample audio')
 
-    parser.add_argument('--fn', type=str, default='3a3d0279',
+    parser.add_argument('--fn', type=str, default='0011_2_20200708_112748',
                         help='file to plot over time to check magnitude')
     parser.add_argument('--threshold', type=str, default=20,
                         help='threshold magnitude for np.int16 dtype')
     args, _ = parser.parse_known_args()
 
     test_threshold(args)
-    #split_wavs(args)
+    split_wavs(args)
