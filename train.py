@@ -99,14 +99,14 @@ def train(args):
                          mode='auto', save_freq='epoch', verbose=1)
     csv_logger = CSVLogger(csv_path, append=False)
     model.fit(tg, validation_data=vg,
-              epochs=30, verbose=1, workers=2,
+              epochs=100, verbose=1, workers=2,
               callbacks=[csv_logger, cp])
 
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Audio Classification Training')
-    parser.add_argument('--model_type', type=str, default='lstm',
+    parser.add_argument('--model_type', type=str, default='conv1d',
                         help='model to run. i.e. conv1d, conv2d, lstm')
     parser.add_argument('--src_root', type=str, default='clean',
                         help='directory of audio files in total duration')
